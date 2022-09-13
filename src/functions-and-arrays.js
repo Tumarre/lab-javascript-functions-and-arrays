@@ -56,24 +56,24 @@ function sumNumbers(suma) {
 console.log(sumNumbers(numbers));
 
 // Iteration #3.2 Bonus:
-const mixedArr = [6, 12, "miami", 1, true, "barca", "200", "lisboa", 8, 10];
+const randomArray = [6, 12, "miami", 1, true, "barca", "200", "lisboa", 8, 10];
 // should return: 57
 
-function sum(mixedArray) {
+function sum(arr) {
   let pinga = 0;
 
-  for (let i = 0; i < mixedArr.length; i++) {
-    if (typeof mixedArr[i] === "number") {
-      pinga += mixedArr[i];
-    } else if (typeof mixedArr[i] === "string") {
-      pinga += mixedArr[i].length;
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] === "number") {
+      pinga += arr[i];
+    } else if (typeof arr[i] === "string") {
+      pinga += arr[i].length;
     } else {
-      pinga += mixedArr[i] === true ? 1 : 0;
+      pinga += arr[i] === true ? 1 : 0;
     }
   }
   return pinga;
 }
-console.log(sum(mixedArr));
+console.log(sum(randomArray));
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
@@ -83,7 +83,7 @@ function averageNumbers(numbersAvg) {
   return sumNumbers(numbersAvg) / numbersAvg.length;
 }
 
-console.log(averageNumbers(numbersAvg));
+console.log(` anasheeee interaction 4 lvl 1 :${averageNumbers(numbersAvg)}`);
 
 // Level 2: Array of strings
 const wordsArr = [
@@ -99,10 +99,35 @@ const wordsArr = [
   "palace",
 ];
 
-function averageWordLength() {}
+function averageWordLength(wordsArrLength) {
+  let wordsLength = 0;
+
+  for (let i = 0; i < wordsArrLength.length; i++) {
+    wordsLength += wordsArrLength[i].length;
+  }
+  return wordsLength / wordsArr.length;
+}
+console.log(`interaction 4 lvl 2: ${averageWordLength(wordsArr)}`);
 
 // Bonus - Iteration #4.1
-function avg() {}
+const mixedArr2 = [6, 12, "miami", 1, true, "barca", "200", "lisboa", 8, 10];
+// should return: 5.7
+
+function avg(patata) {
+  let pinga = 0;
+
+  for (let i = 0; i < patata.length; i++) {
+    if (typeof patata[i] === "number") {
+      pinga += patata[i];
+    } else if (typeof patata[i] === "string") {
+      pinga += patata[i].length;
+    } else {
+      pinga += patata[i] === true ? 1 : 0;
+    }
+  }
+  return pinga / patata.length;
+}
+console.log(`interaction 4.3 : ${avg(mixedArr2)}`);
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -119,7 +144,17 @@ const wordsUnique = [
   "bring",
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(wordsArray) {
+  let newArray = [];
+
+  for (let i = 0; i < wordsArray.length; i++) {
+    if (!newArray.includes(wordsArray[i])) {
+      newArray.push(wordsArray[i]);
+    }
+  }
+  return newArray;
+}
+console.log(`interaction 5 : ${uniquifyArray(wordsUnique)}`);
 
 // Iteration #6: Find elements
 const wordsFind = [
@@ -133,8 +168,14 @@ const wordsFind = [
   "disobedience",
 ];
 
-function doesWordExist() {}
+function doesWordExist(wordsArray, wordToSearch) {
+  if (wordsArray.includes(wordToSearch)) {
+    return true;
+  }
+  return false;
+}
 
+console.log(doesWordExist(wordsFind, "eating"));
 // Iteration #7: Count repetition
 const wordsCount = [
   "machine",
@@ -150,7 +191,17 @@ const wordsCount = [
   "matter",
 ];
 
-function howManyTimes() {}
+function howManyTimes(wordsArray, wordToSearch) {
+  let numberOfTimes = 0;
+  for (let i = 0; i < wordsArray.length; i++) {
+    if (wordToSearch === wordsArray[i]) {
+      numberOfTimes += 1;
+    }
+  }
+  return numberOfTimes;
+}
+
+console.log(howManyTimes(wordsCount, "matter"));
 
 // Iteration #8: Bonus
 const matrix = [
@@ -218,8 +269,20 @@ const matrix = [
   ],
 ];
 
-function greatestProduct() {}
+function greatestProduct(array) {
+  let product = 0;
+  let maxProud = 0;
+  //rows
+  for (let i = 0; i < array.length; i++) {
+    //columns
+    for (let j = 0; j < array.length; j++) {
+      product = array[i][j] * array[i][j - 1] * array[i][j - 2] * array[i][j - 3];
+      if (product < maxProud){}
+    };
+  }
+}
 
+console.log(greatestProduct(matrix, 5));
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
 if (typeof module !== "undefined") {
